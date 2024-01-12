@@ -1,0 +1,668 @@
+/* Reset styles for the body */
+body {
+  margin: 0 auto;
+}
+
+/* Media query for small screens */
+@media (max-width: 767px) {
+  /* Center-align the thank-you subtitle */
+  .thank-subtitle {
+    text-align: center;
+  }
+
+  /* Display thank-you subtitle spans as blocks */
+  .thank-subtitle span {
+    display: block;
+    line-height: normal;
+  }
+
+  /* Update flex direction for footer and carousel elements */
+  .body-footer,
+  .Carousel_1,
+  .Carousel_2,
+  .Carousel_3,
+  .Carousel_4 {
+    flex-direction: column;
+  }
+
+  /* Update flex direction for main view elements */
+  .style-view-page,
+  .text-button-view,
+  .thank-subtitle {
+    flex-direction: column;
+  }
+
+  /* Adjust styles for the main menu on small screens */
+  .menu-principal {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .menu-principal .logo {
+    float: none;
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  .nav-bar ul li {
+    display: block;
+    padding: 5px 0;
+  }
+
+  .nav-bar {
+    gap: 0;
+  }
+
+  .button-nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/* Adjustments to the image from body footer  */
+@media screen and (max-width: 768px) {
+  .body-footer {
+    text-align: center;
+  }
+
+  .logo-container {
+    margin-left: 25%;
+    display: inline;
+  }
+}
+
+/* Divider style */
+.divider {
+  width: 1208px;
+  max-width: 90%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border: 2px solid black;
+  clear: both;
+}
+
+/* Main menu styles */
+.menu-principal {
+  width: 1208px;
+  max-width: 100%;
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 auto;
+  background-color: #ffff;
+  height: 120px;
+}
+
+.logo {
+  float: left;
+  padding-top: 30px;
+  width: 2%;
+}
+
+.nav-bar ul li {
+  display: inline-block;
+  list-style: none;
+  padding-top: 28px;
+  padding-right: 5px;
+  padding-bottom: 0px;
+  padding-left: 2px;
+}
+
+.nav-bar {
+  gap: 16px;
+  float: left;
+}
+
+.button-nav ul li {
+  display: inline-block;
+}
+
+.button-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.button-nav {
+  padding-top: 14px;
+  float: left;
+  margin-right: 1%;
+}
+
+/* Heart button styles */
+.button-heart {
+  font-family: "Poppins";
+  font-weight: bold;
+  padding-top: 16px;
+  padding-right: 32px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  border-radius: 32px;
+  background-color: #ff3d9a;
+  color: white;
+  gap: 8px;
+  border-color: white;
+  font-size: 18px;
+}
+
+.button-heart img {
+  vertical-align: middle;
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+.button-heart span {
+  line-height: 25px;
+}
+
+/* Custom modal styles */
+.custom-modal {
+  font-family: "Poppins";
+  font-weight: bold;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.custom-modal-enter {
+  animation: slideInRight 0.3s ease forwards;
+}
+
+.custom-modal-exit {
+  animation: slideOutLeft 0.3s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(150%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150%);
+  }
+}
+
+.custom-modal-content {
+  width: 480px;
+  height: 716px;
+  background-color: white;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  margin-left: -240px;
+  text-align: center;
+  border-radius: 32px;
+  gap: 48px;
+}
+
+.custom-modal-content p {
+  text-align: center;
+  margin: 0;
+}
+
+.custom-modal-close {
+  color: #888;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.custom-modal-close:hover {
+  color: #000;
+}
+
+/* Donate section styles */
+.donate-title {
+  font-family: "Poppins";
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 58px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.donate-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  width: 416px;
+  height: 80px;
+}
+
+.donate-wrap-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 3%;
+  gap: 8px;
+  width: 416px;
+  height: 80px;
+}
+
+.circular-radio {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  appearance: none;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.circular-radio:checked::before {
+  content: "\2713";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ff3d9a;
+}
+
+/* Layout button styles */
+.layout-button,
+.second-layout-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #3f96fc;
+  margin-bottom: 16px;
+  width: 200px;
+  position: relative;
+}
+
+.layout-button {
+  width: 133.33px;
+  height: 30px;
+}
+
+.second-layout-button {
+  width: 133.33px;
+  height: 60px;
+}
+
+/* Button container styles */
+.button-container {
+  width: 409px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+/* Donate subtitle styles */
+.donate-subtitle {
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+/* Donate form styles */
+.donate-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Payment text styles */
+.payment-text {
+  color: #ff3d9a;
+}
+
+/* Asterisk styles */
+.asterisk {
+  color: #3f96fc;
+}
+
+/* Email input styles */
+input[type="email"] {
+  width: 90%;
+  height: 56px;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #3f96fc;
+  margin-bottom: 8px;
+}
+
+/* Money input styles */
+input[type="money"] {
+  width: 90%;
+  height: 56px;
+  font-size: 16px;
+  padding: 16px;
+  text-align: end;
+  border-radius: 8px;
+  border: 1px solid #3f96fc;
+  margin-bottom: 8px;
+}
+
+/* Donate button styles */
+.button-heart-wanna {
+  font-family: "Poppins";
+  font-weight: bold;
+  padding-top: 16px;
+  padding-right: 32px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  border-radius: 32px;
+  background-color: #ff3d9a;
+  color: white;
+  gap: 8px;
+  border-color: white;
+  font-size: 18px;
+}
+
+.button-heart-wanna span {
+  line-height: 25px;
+}
+
+.button-heart-wanna img {
+  vertical-align: middle;
+  left: 14px;
+  right: 14px;
+}
+
+/* Cancel button styles */
+.button-cancel {
+  font-family: "Poppins";
+  font-weight: bold;
+  padding: 16px 32px 18px;
+  border-radius: 32px;
+  background-color: #37383f;
+  color: white;
+  gap: 8px;
+  border-color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+/* Body footer styles */
+.body-footer {
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 700;
+  width: 1208px;
+  max-width: 90%;
+  line-height: 32px;
+  background-color: #ffff;
+  height: 120px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Footer styles */
+.body-footer footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+}
+
+/* Final footer styles */
+.final-footer {
+  padding-top: 60px;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+/* Text box in the footer styles */
+.text-box-footer {
+  font-family: "Poppins";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 51px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+/* Links row styles */
+.links-row ul li {
+  display: inline-block;
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+.links-row {
+  flex: 1;
+  margin-right: 20px;
+}
+
+/* Info contacts styles */
+.info-contacts ul li {
+  display: inline-block;
+}
+
+.address,
+.phone,
+.mail {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.address img,
+.phone img,
+.mail img {
+  margin-right: 10px;
+}
+
+.address img {
+  padding-top: 25px;
+}
+
+.address {
+  display: flex;
+  align-items: baseline;
+}
+
+.address-text ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.address-text ul li {
+  display: flex;
+  align-items: center;
+}
+
+/* Styles for the main view page */
+.style-view-page {
+  background-color: #1e1f27;
+  margin: 0 auto;
+  display: flex;
+  width: 1208px;
+  max-width: 100%;
+  min-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Back button styles */
+.button-back {
+  font-family: "Poppins";
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 32px;
+  background-color: #37383f;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  align-self: center;
+}
+
+.button-back img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Title styles for the view page */
+.text-view-title {
+  font-family: "Poppins";
+  color: white;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 67px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding-top: 15%;
+  margin: 0 auto;
+  padding-bottom: 15%;
+}
+
+/* Button container for view page */
+.Buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.Buttons button {
+  width: 170px;
+  height: 64px;
+  padding: 24px 32px 24px 34px;
+  border-radius: 32px;
+  gap: 8px;
+  color: white;
+  background: #37383f;
+  border: 2px solid transparent;
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.Buttons img {
+  width: 12px;
+  height: 22px;
+  margin-right: 8px;
+}
+
+/* Carousel and carrossel-line styles */
+.carrossel-line,
+.carrossel-second-line {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.Carousel_1,
+.Carousel_2,
+.Carousel_3,
+.Carousel_4 {
+  text-align: center;
+  margin: 0 20px;
+  margin-bottom: 30px;
+}
+
+/* Media query for small screens */
+@media (max-width: 767px) {
+  .carrossel-line,
+  .carrossel-second-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .Carousel_1,
+  .Carousel_2,
+  .Carousel_3,
+  .Carousel_4 {
+    margin-top: 20%;
+  }
+}
+
+/* Adopt button styles */
+.Adopt_Button button {
+  width: 250px;
+  height: 64px;
+  border-radius: 32px;
+  border: 2px solid #ff3d9a;
+  gap: 8px;
+  background: #ff3d9a;
+  color: white;
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Adopt_Button img {
+  width: 29.49px;
+  height: 25.5px;
+}
+
+/* Carousel paragraph styles */
+.Carousel_1 p,
+.Carousel_2 p,
+.Carousel_3 p,
+.Carousel_4 p {
+  margin-top: 12px;
+  font-family: Poppins, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: white;
+}
+
+/* Image styles for the carousel */
+.image1 img,
+.image2 img,
+.image3 img,
+.image4 img {
+  width: 250px;
+  height: 250px;
+}

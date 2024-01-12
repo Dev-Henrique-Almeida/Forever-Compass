@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Adoptables</title>
+    <link rel="stylesheet" type="text/css" href="./css/adoptables.css" />
+    <header class="menu-principal">
+      <main>
+        <div class="logo nav-bar">
+          <img src="./img/logo.png" width="60" height="60" />
+        </div>
+        <div class="nav-bar">
+          <ul>
+            <li>Rescue Center</li>
+            <li>Apply to adopt</li>
+            <li>Volunteer</li>
+            <li>Ways to give</li>
+            <li>Events</li>
+          </ul>
+        </div>
+        <div class="nav-bar">
+          <ul>
+            <li><img src="./img/fone.png" width="12" height="12" /></li>
+            <li>631-249-7325</li>
+
+            <button class="button-heart">
+              <img src="./img/heart.png" width="25" height="23" />
+              <span>Donate</span>
+            </button>
+
+            <div id="customModal" class="custom-modal">
+              <div class="custom-modal-content">
+                <span class="custom-modal-close" id="customCloseButton"></span>
+                <h1 class="donate-title" id="customModalMessage">
+                  Choose your<br />Donate
+                </h1>
+                <div class="donate-form">
+                  <div class="donate-wrap">
+                    <p class="donate-subtitle">
+                      <span class="payment-text">EMAIL</span>
+                      <span class="asterisk">*</span>
+                    </p>
+                    <input type="email" placeholder="Enter your email" />
+                  </div>
+                  <div class="donate-wrap">
+                    <p class="donate-subtitle">
+                      <span class="payment-text">HOW MUCH CAN YOU HELP?</span>
+                      <span class="asterisk">*</span>
+                    </p>
+                    <input
+                      type="money"
+                      id="money-input"
+                      placeholder="R$ 95,00"
+                      oninput="formatCurrency(this)"
+                    />
+
+                    <script src="./js/form-reais.js"></script>
+                  </div>
+
+                  <div class="donate-wrap">
+                    <p class="donate-subtitle">
+                      <span class="payment-text">PAYMENT METHOD</span>
+                      <span class="asterisk">*</span>
+                    </p>
+
+                    <div class="button-container">
+                      <label class="layout-button">
+                        PIX
+                        <input
+                          type="radio"
+                          class="circular-radio"
+                          name="payment-method"
+                          onclick="toggleStyle(this)"
+                        />
+                      </label>
+                      <label class="second-layout-button">
+                        Credit<br />Card
+                        <input
+                          type="radio"
+                          class="circular-radio"
+                          name="payment-method"
+                          onclick="toggleStyle(this)"
+                        />
+                      </label>
+                      <label class="layout-button">
+                        Pay<br />Pal
+                        <input
+                          type="radio"
+                          class="circular-radio"
+                          name="payment-method"
+                          onclick="toggleStyle(this)"
+                        />
+                      </label>
+                    </div>
+
+                    <div class="donate-wrap-button">
+                      <button id="sucess" class="button-heart-wanna">
+                        <img src="./img/heart.png" width="25" height="23" />
+                        I wanna Help!
+                      </button>
+                    </div>
+                    <div class="donate-wrap-button">
+                      <button class="button-cancel" onclick="closeModal()">
+                        <img src="./img/cancel.png" width="12" height="22" />
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script src="./js/sucess-donate.js"></script>
+            <script src="./js/pagamento.js"></script>
+            <script src="./js/botao-donate.js"></script>
+          </ul>
+        </div>
+      </main>
+    </header>
+    <div class="divider"></div>
+    <br />
+  </head>
+
+  <body>
+    <div class="style-view-page">
+      <div class="text-button-view">
+        <button class="button-back" id="back-button">
+          <img
+            src="./img/cancel.png"
+            alt="cancel.png"
+            style="width: 12px; height: 22px"
+          />
+          Back
+        </button>
+        <h2 class="text-view-title">Our Adoptables Pets</h2>
+      </div>
+      <div class="carrossel-line">
+        <div class="Carousel_1">
+          <div class="image1">
+            <img src="./img/cat-orange.png" alt="cat-bob" />
+          </div>
+          <p>BOB</p>
+          <div class="Adopt_Button">
+            <button>
+              <img src="./img/dog-logo.png" alt="dog_button.png" />
+              See more
+            </button>
+          </div>
+        </div>
+        <div class="Carousel_2">
+          <div class="image2">
+            <img src="./img/cat-green.png" alt="cat-clorinde" />
+          </div>
+          <p>CLORINDE</p>
+          <div class="Adopt_Button">
+            <button>
+              <img src="./img/dog-logo.png" alt="dog_button.png" />
+              See more
+            </button>
+          </div>
+        </div>
+        <div class="Carousel_3">
+          <div class="image3">
+            <img src="./img/dog-white.png" alt="dog-roney" />
+          </div>
+          <p>RONEY</p>
+          <div class="Adopt_Button">
+            <button>
+              <img src="./img/dog-logo.png" alt="dog_button.png" />
+              See more
+            </button>
+          </div>
+        </div>
+        <div class="Carousel_4">
+          <div class="image4">
+            <img src="./img/dog-blue.png" alt="dog-flocks" />
+          </div>
+          <p>FLOCKS</p>
+          <div class="Adopt_Button">
+            <button>
+              <img src="./img/dog-logo.png" alt="dog_button.png" />
+              See more
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="carrossel-second-line">
+        <div class="Carousel_1">
+          <div class="image1">
+            <img src="./img/cat-purple.png" alt="cat-mary" />
+          </div>
+          <p>MARY</p>
+          <div class="Adopt_Button">
+            <button>
+              <img src="./img/dog-logo.png" alt="dog_button.png" />
+              See more
+            </button>
+          </div>
+        </div>
+        <div class="Carousel_2">
+          <div class="image2">
+            <img src="./img/dog-green.png" alt="dog-robs" />
+          </div>
+          <p>ROBS</p>
+          <div class="Adopt_Button">
+            <button>
+              <img src="./img/dog-logo.png" alt="dog_button.png" />
+              See more
+            </button>
+          </div>
+        </div>
+        <div class="Carousel_3">
+          <div class="image3">
+            <img src="./img/cat-yellow.png" alt="cat-matt" />
+          </div>
+          <p>MATT</p>
+          <div class="Adopt_Button">
+            <button>
+              <img src="./img/dog-logo.png" alt="dog_button.png" />
+              See more
+            </button>
+          </div>
+        </div>
+        <div class="Carousel_4">
+          <div class="image4">
+            <img src="./img/dog-pink.png" alt="dog-aristotle" />
+          </div>
+          <p>ARISTOTLE</p>
+          <div class="Adopt_Button">
+            <button>
+              <img src="./img/dog-logo.png" alt="dog_button.png" />
+              See more
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="body-footer">
+      <footer>
+        <div class="logo-container">
+          <img
+            src="./img/logo-footer.png"
+            alt="logo-footer"
+            width="272px"
+            height="242px"
+          />
+        </div>
+        <div class="links-row">
+          <ul>
+            <li>Adopt a Pet</li>
+            <li>Adoptable Dogs</li>
+            <li>Adoptable Cats</li>
+            <li>Become a Foster</li>
+            <li>Rescue Center</li>
+            <li>Get Involved</li>
+          </ul>
+        </div>
+        <div class="links-row">
+          <ul>
+            <li>Ways to Donate</li>
+            <li>Upcoming Events</li>
+            <li>Outreach Programs</li>
+            <li>Who We Are</li>
+            <li>Contact Us</li>
+            <li>Shop With Purpose</li>
+          </ul>
+        </div>
+        <div class="contacts">
+          <div class="info-contacts">
+            <div class="address">
+              <img
+                src="./img/address-logo.png"
+                alt="address-logo"
+                width="14px"
+                height="20px"
+              />
+              <div class="address-text">
+                <ul>
+                  <li>PO Box 83644</li>
+                  <li>Middleton, 2452 Wilson</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="phone">
+              <img
+                src="./img/phone-logo.png"
+                alt="phone-logo"
+                width="18px"
+                height="18px"
+              />
+              <p>631-249-7325</p>
+            </div>
+            <div class="mail">
+              <img
+                src="./img/mail-logo.png"
+                alt="mail-logo"
+                width="20px"
+                height="16px"
+              />
+              <p>pet_home@gmail.com</p>
+            </div>
+          </div>
+          <div class="socials">
+            <div class="socials-row">
+              <img
+                src="./img/twitter-logo.png"
+                alt="twitter-logo"
+                width="25px"
+                height="21px"
+              />
+              <img
+                src="./img/zap-logo.png"
+                alt="zap-logo"
+                width="26px"
+                height="26px"
+              />
+              <img
+                src="./img/instagram-logo.png"
+                alt="instagram-logo"
+                width="26px"
+                height="26px"
+              />
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="divider"></div>
+      <div class="final-footer">
+        <h2 class="text-box-footer" style="display: inline; color: black">
+          We are not just a rescue,
+        </h2>
+        <h2 class="text-box-footer" style="display: inline; color: #ff3d9a">
+          we are a refuge
+        </h2>
+      </div>
+    </div>
+    <script src="./js/botao-back.js"></script>
+  </body>
+</html>

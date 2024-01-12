@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <title>Desafio de Código - Forever Homes Shelter</title>
+
+    <header class="menu-principal">
+      <main>
+        <div class="logo nav-bar">
+          <img src="./img/logo.png" width="60" height="60" />
+        </div>
+        <div class="nav-bar">
+          <ul>
+            <li>Rescue Center</li>
+            <li>Apply to adopt</li>
+            <li>Volunteer</li>
+            <li>Ways to give</li>
+            <li>Events</li>
+          </ul>
+        </div>
+        <div class="nav-bar">
+          <ul>
+            <li><img src="./img/fone.png" width="12" height="12" /></li>
+            <li>631-249-7325</li>
+
+            <button class="button-heart">
+              <img src="./img/heart.png" width="25" height="23" />
+              <span>Donate</span>
+            </button>
+
+            <div id="customModal" class="custom-modal">
+              <div class="custom-modal-content">
+                <span class="custom-modal-close" id="customCloseButton"></span>
+                <h1 class="donate-title" id="customModalMessage">
+                  Choose your<br />Donate
+                </h1>
+                <div class="donate-form">
+                  <div class="donate-wrap">
+                    <p class="donate-subtitle">
+                      <span class="payment-text">EMAIL</span>
+                      <span class="asterisk">*</span>
+                    </p>
+                    <input type="email" placeholder="Enter your email" />
+                  </div>
+                  <div class="donate-wrap">
+                    <p class="donate-subtitle">
+                      <span class="payment-text">HOW MUCH CAN YOU HELP?</span>
+                      <span class="asterisk">*</span>
+                    </p>
+                    <input
+                      type="money"
+                      id="money-input"
+                      placeholder="R$ 95,00"
+                      oninput="formatCurrency(this)"
+                    />
+
+                    <script src="./js/form-reais.js"></script>
+                  </div>
+
+                  <div class="donate-wrap">
+                    <p class="donate-subtitle">
+                      <span class="payment-text">PAYMENT METHOD</span>
+                      <span class="asterisk">*</span>
+                    </p>
+
+                    <div class="button-container">
+                      <label class="layout-button">
+                        PIX
+                        <input
+                          type="radio"
+                          class="circular-radio"
+                          name="payment-method"
+                          onclick="toggleStyle(this)"
+                        />
+                      </label>
+                      <label class="second-layout-button">
+                        Credit<br />Card
+                        <input
+                          type="radio"
+                          class="circular-radio"
+                          name="payment-method"
+                          onclick="toggleStyle(this)"
+                        />
+                      </label>
+                      <label class="layout-button">
+                        Pay<br />Pal
+                        <input
+                          type="radio"
+                          class="circular-radio"
+                          name="payment-method"
+                          onclick="toggleStyle(this)"
+                        />
+                      </label>
+                    </div>
+
+                    <div class="donate-wrap-button">
+                      <button id="sucess" class="button-heart-wanna">
+                        <img src="./img/heart.png" width="25" height="23" />
+                        I wanna Help!
+                      </button>
+                    </div>
+                    <div class="donate-wrap-button">
+                      <button class="button-cancel" onclick="closeModal()">
+                        <img src="./img/cancel.png" width="12" height="22" />
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script src="./js/sucess-donate.js"></script>
+            <script src="./js/pagamento.js"></script>
+            <script src="./js/botao-donate.js"></script>
+          </ul>
+        </div>
+      </main>
+    </header>
+    <div class="divider"></div>
+  </head>
+
+  <div class="body-style">
+    <div class="body-style-mini">
+      <div>
+        <header class="title-body">
+          <h1>Forever Homes Shelter</h1>
+        </header>
+
+        <div class="resume-body">
+          <p>
+            Our mission is to rescue and provide rehabilitation to dogs and cats
+            that are critically injured or neglected. We have already saved the
+            lives of 10,000 animals. We are not just a rescue, we are a refuge.
+          </p>
+        </div>
+
+        <div class="subtitle-body">
+          <h2>Your Gift Helps Save Lives</h2>
+        </div>
+        <div class="button-body">
+          <div>
+            <button class="button-heart" onclick="openCustomModal()">
+              <img src="./img/heart.png" width="25" height="23" />
+              Donate
+            </button>
+          </div>
+          <div class="modal custom-modal" id="adoptModal">
+            <div class="custom-modal-content-adopt">
+              <span
+                class="custom-modal-close"
+                onclick="closeModalAdoptB()"
+              ></span>
+              <p class="adopt-title">Apply to Adopt</p>
+
+              <p class="adopt-center">Small text description can goes here</p>
+              <div class="adopt-form">
+                <div class="adopt-wrap">
+                  <p class="donate-subtitle">
+                    <span class="payment-text">EMAIL</span>
+                    <span class="asterisk">*</span>
+                  </p>
+                  <input type="email" placeholder="Enter your email" />
+                </div>
+                <div class="adopt-wrap">
+                  <p class="donate-subtitle">
+                    <span class="payment-text">FULL NAME</span>
+                    <span class="asterisk">*</span>
+                  </p>
+                  <input type="email" placeholder="Your name" />
+                </div>
+
+                <div class="adopt-wrap">
+                  <p class="donate-subtitle">
+                    <span class="payment-text">DATE OF BIRTH</span>
+                    <span class="asterisk">*</span>
+                  </p>
+                  <div class="date-selects">
+                    <select class="layout-button-adopt" id="day" name="day">
+                      <option value="" disabled selected>Day</option>
+                    </select>
+                    <select class="layout-button-adopt" id="month" name="month">
+                      <option value="" disabled selected>Month</option>
+                    </select>
+                    <select class="layout-button-adopt" id="year" name="year">
+                      <option value="" disabled selected>Year</option>
+                    </select>
+                  </div>
+                  <div class="donate-wrap">
+                    <p>
+                      <label class="checkbox-label">
+                        <input type="checkbox" class="custom-checkbox" />
+                        <span class="checkbox-span"> </span>
+                      </label>
+                      <label style="margin-left: 30px">
+                        <span class="agree-style">I agree with</span>
+                        <span class="agree-style" style="color: #ff3d9a"
+                          >Privacy Policy</span
+                        >
+                        <span class="agree-style">and</span>
+                        <span class="agree-style" style="color: #ff3d9a"
+                          >Terms of Conditions</span
+                        >
+                      </label>
+                    </p>
+                    <div class="adopt-wrap-button">
+                      <button id="sucess-id" class="button-dog-adopt">
+                        <img src="./img/dog-logo.png" width="25" height="23" />
+                        I wanna Adopt!
+                      </button>
+                    </div>
+                    <div class="adopt-wrap-button">
+                      <button
+                        class="button-cancel-adopt"
+                        onclick="closeAdoptModal()"
+                      >
+                        <img src="./img/cancel.png" width="12" height="22" />
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script src="./js/sucess-adopt.js"></script>
+          <script src="./js/botao-adopt.js"></script>
+          <script src="./js/date-form.js"></script>
+          <script src="./js/form-reais.js"></script>
+
+          <button class="button-dog" onclick="openAdoptModal()">
+            <img src="./img/dog.png" width="29" height="26" />Apply to Adopt
+          </button>
+
+          <script src="./js/botao-adopt.js"></script>
+        </div>
+      </div>
+
+      <img src="./img/body-cat.png" alt="Imagem" class="content-image" />
+    </div>
+  </div>
+
+  <div class="second-body-style">
+    <div class="second-body-style-mini">
+      <header class="second-title-body">
+        <h2>With your help, we <br />accomplished these goals</h2>
+      </header>
+      <div class="stats">
+        <div class="animals-rescued">
+          <div class="stats-title">
+            <p>1400</p>
+          </div>
+          <div class="stats-subtitle">
+            <p>Animals Rescued</p>
+          </div>
+        </div>
+
+        <div class="raised">
+          <div class="stats-title">
+            <p>$1.4 Million</p>
+          </div>
+          <div class="stats-subtitle">
+            <p>Raised</p>
+          </div>
+        </div>
+
+        <div class="raised">
+          <div class="stats-title">
+            <p>940</p>
+          </div>
+          <div class="stats-subtitle">
+            <p>Tails Found a Home</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide">
+            <img src="/img/cat-orange.png" alt="Image 2" />
+            <img src="./img/cat-green.png" alt="Image 1" />
+            <img src="/img/dog-white.png" alt="Image 4" />
+            <img src="/img/dog-blue.png" alt="Image 3" />
+          </div>
+          <div class="slide">
+            <img src="/img/cat-green.png" alt="Image 2" />
+            <img src="/img/dog-white.png" alt="Image 4" />
+            <img src="./img/dog-blue.png" alt="Image 1" />
+            <img src="./img/dog-pink.png" alt="Image 1" />
+          </div>
+          <div class="slide">
+            <img src="/img/dog-white.png" alt="Image 3" />
+            <img src="./img/dog-blue.png" alt="Image 1" />
+            <img src="./img/dog-pink.png" alt="Image 1" />
+            <img src="/img/cat-orange.png" alt="Image 2" />
+          </div>
+          <div class="slide">
+            <img src="/img/dog-blue.png" alt="Image 4" />
+            <img src="/img/dog-pink.png" alt="Image 2" />
+            <img src="./img/cat-orange.png" alt="Image 1" />
+            <img src="./img/cat-green.png" alt="Image 1" />
+          </div>
+          <div class="slide">
+            <img src="/img/dog-pink.png" alt="Image 4" />
+            <img src="./img/cat-orange.png" alt="Image 1" />
+            <img src="/img/cat-green.png" alt="Image 2" />
+            <img src="./img/dog-white.png" alt="Image 1" />
+          </div>
+        </div>
+        <div class="prev">
+          <img
+            src="/img/arrow-left.png"
+            alt="back"
+            style="width: 44px; height: 44px"
+          />
+        </div>
+        <div class="next">
+          <img
+            src="/img/arrow-right.png"
+            alt="next"
+            style="width: 44px; height: 44px"
+          />
+        </div>
+        <div class="dots-container">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/carrossel.js"></script>
+
+    <div class="second-title-body">
+      <h2>With your donations we provide</h2>
+    </div>
+    <div class="cards-style">
+      <div class="body-row">
+        <div class="cards-body">
+          <div class="cards-title">
+            <ul>
+              <li>Shelter</li>
+              <li>
+                <img
+                  src="./img/house-heart.png"
+                  alt="Imagem"
+                  width="63px"
+                  height="53px"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="cards-subtitle">
+            <p>
+              We provide shelter for many of our cats and dogs. In addition to a
+              roof over their heads, we pay for heat, food, water, and
+              electricity, and general maintenance.
+            </p>
+          </div>
+        </div>
+        <div class="cards-body">
+          <div class="cards-title">
+            <ul>
+              <li>Vetting</li>
+              <li>
+                <img
+                  src="./img/cruz-green.png"
+                  alt="Imagem"
+                  width="49px"
+                  height="49px"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="cards-subtitle">
+            <p>
+              We provide vet care to our cats and dogs. We take care of general
+              health assessments medications, vaccinations, spay/neuter
+              procedures, and other surgeries.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-body facilities">
+          <div class="cards-title">
+            <ul>
+              <li>Facilities</li>
+              <li>
+                <img
+                  src="./img/office.png"
+                  alt="Imagem"
+                  width="49px"
+                  height="52px"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="cards-subtitle">
+            <p>
+              We currently utilize a facility in a dilapidated state, which has
+              necessitated significant investments to make it usable again. We
+              are still restoring the building to its full potential.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="body-row">
+        <div class="cards-body transport">
+          <div class="cards-title">
+            <ul>
+              <li>Transport</li>
+              <li>
+                <img
+                  src="./img/maleta.png"
+                  alt="Imagem"
+                  width="57px"
+                  height="60px"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="cards-subtitle">
+            <p>
+              Each year, we transport over 600 dogs and 350 cats from kill
+              shelters and emergency distressing situations to hospitals or our
+              shelter, providing them with a second chance at life.
+            </p>
+          </div>
+        </div>
+        <div class="cards-body">
+          <div class="cards-title">
+            <ul>
+              <li>Fosters</li>
+              <li>
+                <img
+                  src="./img/smile.png"
+                  alt="Imagem"
+                  width="56px"
+                  height="49px"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="cards-subtitle">
+            <p>
+              Were lucky to have a group of individuals who generously foster
+              our cats and dogs in their homes. We cover all their veterinary
+              needs and provide necessary food supplies.
+            </p>
+          </div>
+        </div>
+        <div class="cards-body food">
+          <div class="cards-title">
+            <ul>
+              <li>Food</li>
+              <li>
+                <img
+                  src="./img/bone-dog.png"
+                  alt="Imagem"
+                  width="64px"
+                  height="29px"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="cards-subtitle">
+            <p>
+              Each year, we nourish our cats and dogs with over 2,200 cans of
+              wet food and 1,600 pounds of dry food to ensure their well-being
+              and keep them content and thriving.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="Adopt_Info_Black">
+    <div class="Adoption_Main">
+      <div class="Text">
+        <h1>Adoption information</h1>
+      </div>
+      <div class="Content_Block">
+        <div class="image">
+          <img
+            src="./img/body-dog.png"
+            alt="body_dog.png"
+            width="584px"
+            height="616"
+          />
+        </div>
+        <div class="Text_Block">
+          <div class="h1">
+            <h1>Applicants must:</h1>
+          </div>
+
+          <div class="ul-container">
+            <div class="ul">
+              <ul>
+                <li>Live within a 90 mile radius of our shelter</li>
+                <li>
+                  Accept the financial responsibility of vet care and pet care
+                </li>
+                <li>
+                  Donate $400 to adopt their dog/puppy; $125 for a cat; $150 for
+                  a kitten
+                </li>
+                <li>
+                  Be over 23 years of age to adopt a dog and 21 years of age to
+                  adopt a cat
+                </li>
+                <li>Be ready to adopt within 7-10 days<br /></li>
+              </ul>
+            </div>
+            <button class="third-adopt" onclick="openAdoptModal()">
+              Apply to Adopt
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="second-body-style">
+    <div class="flex-container">
+      <img
+        src="./img/heart-left.png"
+        alt="heart-left"
+        width="58px"
+        height="45px"
+      />
+      <header class="second-title-body">
+        <h2>
+          How you can make <br />
+          a difference
+        </h2>
+      </header>
+      <img
+        src="./img/heart-right.png"
+        alt="heart-right"
+        width="58px"
+        height="45px"
+      />
+    </div>
+
+    <div class="body-row-how">
+      <div class="second-cards-body">
+        <div class="second-cards-title">
+          <p>Adopt or Foster</p>
+        </div>
+        <div class="second-cards-subtitle">
+          <p>Provide a forever or temporary home to a homeless animal.</p>
+        </div>
+        <div
+          id="view-adoptables-button"
+          class="second-cards-buttons-title"
+          style="background-color: #04c27f; color: black"
+        >
+          <p>View Adoptables</p>
+        </div>
+      </div>
+      <div class="second-cards-body">
+        <div class="second-cards-title">
+          <p>Volunteer</p>
+        </div>
+        <div class="second-cards-subtitle">
+          <p>We are always in need of passionate and friendly volunteers.</p>
+        </div>
+
+        <div
+          class="second-cards-buttons-title"
+          style="background-color: #f1d06e; color: black"
+        >
+          <p>Get Involved</p>
+        </div>
+      </div>
+      <div class="second-cards-body">
+        <div class="second-cards-title">
+          <p>Donate Monthly</p>
+        </div>
+        <div class="second-cards-subtitle">
+          <p>
+            Regular donations is a reliable stream of funds to help sustain.
+          </p>
+        </div>
+
+        <div
+          class="second-cards-buttons-title"
+          style="background-color: #ff3d9a; color: white"
+        >
+          <p>Give Monthly</p>
+        </div>
+      </div>
+      <div class="second-cards-body">
+        <div class="second-cards-title">
+          <p>Start a Fundraiser</p>
+        </div>
+        <div class="second-cards-subtitle">
+          <p>
+            Start a fundraiser to raise funds and help us continue our mission.
+          </p>
+        </div>
+        <div
+          class="second-cards-buttons-title"
+          style="background-color: #5758f1; color: white"
+        >
+          <p>Learn More</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fourth-body-style">
+    <table>
+      <tr>
+        <td>
+          <img
+            class="box-images"
+            src="./img/cat-fish.png"
+            alt="cat-fish"
+            width="300px"
+            height="400px"
+          />
+        </td>
+        <td>
+          <div class="full-text-box">
+            <h2 class="text-box" style="display: inline; color: white">
+              Find your
+            </h2>
+            <h2 class="text-box" style="display: inline; color: #f8db46">
+              best friend
+            </h2>
+            <h2 class="text-box" style="display: inline; color: white">
+              today!
+            </h2>
+          </div>
+          <div class="text-box-mini">
+            <h3>Browse our adorable adoptables</h3>
+          </div>
+          <div class="box-button">
+            <button id="view-adoptables-button2" class="button-adoptables">
+              View Adoptables
+            </button>
+
+            <script src="./js/view-adoptables.js"></script>
+            <button class="button-adopt" onclick="openAdoptModal()">
+              Apply to Adopt
+            </button>
+          </div>
+        </td>
+
+        <td>
+          <img
+            class="box-images"
+            src="./img/dog-bone.png"
+            alt="dog-bone"
+            width="300px"
+            height="400px"
+          />
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="fifth-body-style">
+    <header class="second-title-body">
+      <h2>Subscribe to our newsletter</h2>
+    </header>
+    <div class="second-cards-subtitle">
+      <p>
+        for updates on shelter events, fundraising parties, and heartwarming
+        stories<br />
+        of animals finding their forever homes.
+      </p>
+    </div>
+    <div class="body-row-email">
+      <div id="email-input-container">
+        <input
+          type="email-a"
+          id="user-email"
+          class="custom-font"
+          placeholder="Enter your email"
+        />
+
+        <button id="submit-button">Subscribe</button>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content" id="modal-content">
+        <span class="close" id="close-button"></span>
+        <p id="modal-message"></p>
+        <button
+          class="custom-font"
+          id="modal-button"
+          style="display: none"
+        ></button>
+      </div>
+    </div>
+
+    <script src="./js/validacao-email.js"></script>
+  </div>
+  <div class="body-footer">
+    <footer>
+      <div class="logo-container">
+        <img
+          src="./img/logo-footer.png"
+          alt="logo-footer"
+          width="272px"
+          height="242px"
+        />
+      </div>
+      <div class="links-row">
+        <ul>
+          <li>Adopt a Pet</li>
+          <li>Adoptable Dogs</li>
+          <li>Adoptable Cats</li>
+          <li>Become a Foster</li>
+          <li>Rescue Center</li>
+          <li>Get Involved</li>
+        </ul>
+      </div>
+      <div class="links-row">
+        <ul>
+          <li>Ways to Donate</li>
+          <li>Upcoming Events</li>
+          <li>Outreach Programs</li>
+          <li>Who We Are</li>
+          <li>Contact Us</li>
+          <li>Shop With Purpose</li>
+        </ul>
+      </div>
+      <div class="contacts">
+        <div class="info-contacts">
+          <div class="address">
+            <img
+              src="./img/address-logo.png"
+              alt="address-logo"
+              width="14px"
+              height="20px"
+            />
+            <div class="address-text">
+              <ul>
+                <li>PO Box 83644</li>
+                <li>Middleton, 2452 Wilson</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="phone">
+            <img
+              src="./img/phone-logo.png"
+              alt="phone-logo"
+              width="18px"
+              height="18px"
+            />
+            <p>631-249-7325</p>
+          </div>
+          <div class="mail">
+            <img
+              src="./img/mail-logo.png"
+              alt="mail-logo"
+              width="20px"
+              height="16px"
+            />
+            <p>pet_home@gmail.com</p>
+          </div>
+        </div>
+        <div class="socials">
+          <div class="socials-row">
+            <img
+              src="./img/twitter-logo.png"
+              alt="twitter-logo"
+              width="25px"
+              height="21px"
+            />
+            <img
+              src="./img/zap-logo.png"
+              alt="zap-logo"
+              width="26px"
+              height="26px"
+            />
+            <img
+              src="./img/instagram-logo.png"
+              alt="instagram-logo"
+              width="26px"
+              height="26px"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="divider"></div>
+    <div class="final-footer">
+      <h2 class="text-box-footer" style="display: inline; color: black">
+        We are not just a rescue,
+      </h2>
+      <h2 class="text-box-footer" style="display: inline; color: #ff3d9a">
+        we are a refuge
+      </h2>
+    </div>
+  </div>
+</html>
